@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanika Shete - Education</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        /* ------------------ BACKGROUND FIXED ------------------ */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            background-image: url("{% static 'images/A.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        /* ------------------------------------------------------- */
+
+        /* Content Section */
+        .content-section {
+            flex-grow: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            width: 100%;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #6a0dad;
+            color: black;
+        }
+        .item-card h3 {
+            color: #6a0dad;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .item-card h4 {
+            color: #555;
+            font-size: 1em;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Heading */
+        h1 {
+             text-align: center;
+            color: white; /* Changed to white for visibility */
+            padding-top: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 4px 40px;
+            border-radius: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home'%}" id="one">Sanika Shete</a>
+        <ul type="none" class="two">
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'education'%}">Education</a></li>
+            <li><a href="{% url 'skills'%}">Skills</a></li>
+            <li><a href="{% url 'projects'%}">Projects</a></li>
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+        </ul> 
+    </nav>
+    
+    <h1><i class="fas fa-graduation-cap"></i> My Education</h1>
+
+    <div class="content-section">
+        
+        <div class="item-card">
+            <h3>Python Full-Stack Developer Certification</h3>
+            <h4>IT VEDANT TRAINING INSTITUTE</h4>
+            <p>Completed comprehensive training in full-stack development covering Python, Django, database management, and front-end technologies.</p>
+            <span class="duration-tag">2025</span>
+        </div>
+
+        <div class="item-card">
+            <h3>B.Sc (Computer Science) - Completed Graduation</h3>
+            <h4>Balwant College Vita, Under Rayat Shikshan Sanstha</h4>
+            <p>Developed a strong foundation in computer science principles, programming, and software development methodologies.</p>
+            <span class="duration-tag">2022 – 2025</span>
+        </div>
+
+        <div class="item-card">
+            <h3>Higher School Certificate (HSC) - First Class</h3>
+            <h4>Vita Highschool Vita, Under Rayat Shikshan Sanstha</h4>
+            <p>Achieved First Class distinction, focusing on foundational science and mathematics subjects.</p>
+            <span class="duration-tag">2019</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with Django & CSS Animation.</h4>
+    </div>
+</body>
+</html>

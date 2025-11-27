@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanika Shete - Full-Stack Developer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+
+            background-image: url("{% static 'images/L.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* MAIN CONTENT AREA (pushes footer down) */
+        .content-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Profile Card */
+        .three {
+            background-color: rgba(255,255,255,0.9);
+            color: black;
+            display: flex;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 90%;
+            gap: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .three img {
+            width: 230px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid purple;
+        }
+
+        h1 {
+             text-align: center;
+            color: white; /* Changed to white for visibility */
+            padding-top: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 40px;
+            border-radius: 20px;
+            margin: 10px;
+        }
+        nav a {
+            color: rgb(14, 8, 8);
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* FOOTER ALWAYS BOTTOM */
+        .footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(0,0,0,0.6);
+            width: 100%;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="{% url 'home'%}">Sanika Shete</a>
+        <ul>
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'education'%}">Education</a></li>
+            <li><a href="{% url 'skills'%}">Skills</a></li>
+            <li><a href="{% url 'projects'%}">Projects</a></li>
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Profile Summary</h1>
+
+    <!-- ALL CONTENT INSIDE THIS → Footer stays at bottom -->
+    <div class="content-section">
+
+        <div class="three">
+            <img src="{% static 'images/pro.jpg' %}" alt="Sanika Shete Profile image">
+            <p>
+                An aspiring and highly motivated <b>Python Full-Stack Developer</b> (2025). Skilled in Django, HTML, CSS, JavaScript, and SQL. Passionate about building efficient and user-friendly applications, including the Flower Shop Management System. Seeking opportunities to apply strong technical and problem-solving skills in a professional environment.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with Django & CSS Animation.</h4>
+    </div>
+
+</body>
+</html>

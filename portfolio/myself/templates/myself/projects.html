@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanika Shete - Projects</title>
+
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+
+        html {
+            height: 100%;
+        }
+
+        /* ------------------ BACKGROUND FIXED ------------------ */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            background-image: url("{% static 'images/S.gif' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        /* ------------------------------------------------------- */
+
+        /* Content Section */
+        .content-section {
+            flex-grow: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            width: 100%;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #6a0dad;
+            color: black;
+        }
+        .item-card h3 {
+            color: #6a0dad;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .item-card h4 {
+            color: #555;
+            font-size: 1em;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: white; /* Changed to white for visibility */
+            padding-top: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 4px 40px;
+            border-radius: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            margin-left: 25px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'home' %}" id="one">Sanika Shete</a>
+        <ul type="none" class="two">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'education' %}">Education</a></li>
+            <li><a href="{% url 'skills' %}">Skills</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1><i class="fas fa-laptop-code"></i> My Key Projects</h1>
+
+    <div class="content-section">
+
+        <div class="item-card">
+            <h3>Flower Shop Management System (Full-Stack)</h3>
+            <h4><i class="fas fa-cogs"></i> Python/Django, HTML, CSS, JavaScript, SQL</h4>
+            <p>
+                Developed a full-stack system to manage customer and flower details,
+                automating records and reducing manual workload.
+            </p>
+        </div>
+
+        <div class="item-card">
+            <h3>Animational Portfolio Website</h3>
+            <h4><i class="fas fa-magic"></i> HTML, CSS, JavaScript, Bootstrap</h4>
+            <p>
+                Created an interactive portfolio website with smooth animations and transitions.
+            </p>
+        </div>
+
+        <div class="item-card">
+            <h3>Currency Converter (Responsive)</h3>
+            <h4><i class="fas fa-money-bill-transfer"></i> HTML, CSS, JS (API)</h4>
+            <p>
+                Built a responsive converter with live exchange rates and interactive UI.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved.</h4>
+    </div>
+
+</body>
+</html>

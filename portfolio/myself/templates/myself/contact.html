@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanika Shete - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+    <style>
+        /* --- STICKY FOOTER & BACKGROUND FIXES --- */
+        html {
+            height: 100%;
+        }
+        body {
+            /* STICKY FOOTER PROPERTIES */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; 
+            
+            /* GENERAL STYLES */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4; /* Fallback color */
+            
+            /* BACKGROUND IMAGE PROPERTIES */
+            /* IMPORTANT: The path is set to assume 1.jpg is in a folder named 'images' 
+               one level up from your CSS file (e.g., static/images/1.jpg) */
+            background-image: url("{% static 'images/1.webp' %}"); 
+            background-size: cover;          /* Ensures the image covers the entire viewport */
+            background-repeat: no-repeat;    /* Prevents the image from tiling */
+            background-attachment: fixed;    /* Keeps the image fixed while content scrolls */
+            background-position: center center; /* Centers the image */
+        }
+
+        /* --- CONTENT PUSHER --- */
+        .form-section {
+            flex-grow: 1; /* Pushes the footer down by taking up remaining space */
+            
+            /* Form Layout Styles (Preserved) */
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* --- FORM & HEADER STYLES (Preserved) --- */
+        h1 {
+            text-align: center;
+            color: #580dad;
+            padding-top: 50px;
+            font-size: 2.5em;
+        }
+        h1 .fas {
+            margin-right: 10px;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 650px;
+            /* Note: Added transparency to the form background so 1.jpg can show through slightly */
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; 
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #6a0dad; 
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical; 
+            min-height: 150px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #6a0dad; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #580a8b; 
+        }
+
+        /* --- FOOTER STYLES --- */
+        .footer {
+            background-color: transparent; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+        .footer h4 {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        /* Navbar styles (preserved) */
+        nav {
+            background-color: transparent;
+            padding: 4px 40px;
+            border-radius: 20px;
+            color: rgb(242, 235, 235);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid rgb(15, 15, 15);
+          
+        }
+        nav a { color: rgb(14, 8, 8); text-decoration: none; }
+        nav ul { display: flex; padding: 0; margin: 0; }
+        nav li { margin-left: 25px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home'%}" id="one">Sanika Shete</a>
+        <ul type="none" class="two">
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'education'%}">Education</a></li>
+            <li><a href="{% url 'skills'%}">Skills</a></li>
+            <li><a href="{% url 'projects'%}">Projects</a></li>
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+        </ul> 
+    </nav>
+    
+    <h1><i class="fas fa-handshake"></i> Get in Touch</h1>
+
+    <section class="form-section">
+        <div class="form-container">
+            <form action="/submit_contact/" method="POST" id="contactForm">
+                {% csrf_token %} 
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="e.g., Job Opportunity or Collaboration">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell me about yourself or your proposal..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="footer">
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with Django & CSS Animation.</h4>
+    </div>
+</body>
+</html>
