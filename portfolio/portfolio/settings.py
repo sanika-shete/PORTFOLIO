@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$fpb__(fxoiuw#e%8@m(72f636q-%u0^hu^p#q!88#ins@*b2e'
 
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['portfolio-tiw9.onrender.com', '*']
 
 
 
@@ -110,6 +110,7 @@ STATICFILES_DIRS = [
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_production')
+
 
 
 
