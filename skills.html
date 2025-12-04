@@ -1,11 +1,12 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanika Shete - Skills</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
+    
+    <link rel="stylesheet" href="portfolio/myself/static/home.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -26,50 +27,89 @@
             color: #333;
             background-color: #f4f4f4; /* Fallback color */
             
-            /* BACKGROUND IMAGE PROPERTIES (Adjust the path if needed) */
-            background-image: url("{% static 'images/3.png' %}"); 
+            /* BACKGROUND IMAGE PROPERTIES: PATH CHANGED FOR GITHUB PAGES */
+            background-image: url("portfolio/myself/static/images/3.png"); 
             background-size: cover; 
             background-repeat: no-repeat; 
             background-attachment: fixed; 
             background-position: center center; 
             
-            /* --- ANIMATION CODE ADDED HERE --- */
-            /* ऍनिमेशन लागू करा: 40 सेकंदात हळू, सतत आणि पुढे-मागे (alternate) */
+            /* --- ANIMATION CODE (KEPT AS IS) --- */
             animation: backgroundPan 40s linear infinite alternate;
         }
 
-        /* ऍनिमेशन Keyframes */
+        /* ऍनिमेशन Keyframes (KEPT AS IS) */
         @keyframes backgroundPan {
             0% {
-                /* ऍनिमेशनची सुरुवात (वर-डावीकडे) */
                 background-position: 0% 0%;
             }
             100% {
-                /* ऍनिमेशनचा शेवट (खाली-उजवीकडे) */
                 background-position: 100% 100%;
             }
         }
         
         /* --- CONTENT PUSHER & LAYOUT --- */
         .content-section {
-            flex-grow: 1; /* Pushes the footer down */
+            flex-grow: 1; 
             padding: 40px 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        /* --- SKILLS GRID STYLES (New for this page) --- */
+        /* --- SKILLS GRID STYLES & ANIMATION --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Makes the grid responsive: minimum size of each column is 300px */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 30px;
         }
+        
         .skill-category {
-            background-color: rgba(255, 255, 255, 0.95); /* Light transparent box */
+            background-color: rgba(255, 255, 255, 0.95); 
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-top: 5px solid #6a0dad; /* Highlight top border */
+            cursor: default;
+            /* Card Animation */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
+
+        .skill-category:hover {
+            transform: translateY(-5px); /* Lift on hover */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+        }
+        
+        /* Adding Animation to individual list items */
+        .skill-category li {
+            position: relative;
+            padding: 8px 0 8px 25px; /* Space for the icon/bullet */
+            font-size: 1.1em;
+            color: #333;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Custom bullet point (animated checkmark/dot) */
+        .skill-category li::before {
+            content: "\f058"; /* Font Awesome Check Circle Icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #6a0dad;
+            animation: bounceIn 1s ease-out; /* Bounce-in animation */
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         .skill-category h3 {
             color: #6a0dad;
             border-bottom: 2px solid #6a0dad;
@@ -77,51 +117,53 @@
             margin-top: 0;
             font-size: 1.5em;
         }
-        .skill-category ul {
-            list-style: none;
-            padding: 0;
-        }
-        .skill-category li {
-            padding: 8px 0;
-            font-size: 1.1em;
-            color: #333;
-        }
 
         /* --- HEADER STYLES --- */
         h1 {
             text-align: center;
-            color: white; /* Changed to white for visibility */
+            color: white; 
             padding-top: 50px;
             font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
         }
         h1 .fas {
             margin-right: 10px;
+            /* Added Subtle Rotation */
+            animation: rotate 10s linear infinite; 
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (Made responsive) --- */
         nav {
-            background-color: transparent;
-            padding: 9px 44px;
-            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px; 
+            margin: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
-        /* NAVBAR TEXT COLOR CHANGE */
         nav a { 
-            color: black; /* Made links black for contrast */
+            color: #333;
             text-decoration: none; 
-            font-weight: bold; /* Added bolding */
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Light shadow on text */
+            font-weight: bold; 
+            transition: color 0.3s ease;
         }
-        nav ul { display: flex; padding: 0; margin: 0; }
-        nav li { margin-left: 25px; list-style: none; }
+        nav a:hover {
+            color: #6a0dad;
+        }
+        nav ul { display: flex; padding: 0; margin: 0; list-style: none; }
+        nav li { margin-left: 20px; }
         
         /* --- FOOTER STYLES --- */
         .footer {
-            background-color: transparent; 
-            color: white; /* Changed to white */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white; 
             text-align: center;
             padding: 20px;
             width: 100%;
@@ -131,17 +173,39 @@
             margin: 0;
             font-size: 14px;
         }
+        
+        /* --- RESPONSIVENESS: Mobile Devices --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px 10px;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                margin-top: 10px;
+                width: 100%;
+            }
+            nav li {
+                margin-left: 0;
+            }
+            h1 {
+                padding-top: 30px;
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="{% url 'home'%}" id="one">Sanika Shete</a>
-        <ul type="none" class="two">
-            <li><a href="{% url 'home'%}">Home</a></li>
-            <li><a href="{% url 'education'%}">Education</a></li>
-            <li><a href="{% url 'skills'%}">Skills</a></li>
-            <li><a href="{% url 'projects'%}">Projects</a></li>
-            <li><a href="{% url 'contact'%}">Contact</a></li>
+        <a href="index.html" id="one">Sanika Shete</a>
+        <ul class="two">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul> 
     </nav>
     
@@ -179,7 +243,7 @@
     </div>
 
     <div class="footer">
-        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with Django & CSS Animation.</h4>
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Hosted with HTML/CSS.</h4>
     </div>
 </body>
 </html>
