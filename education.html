@@ -4,99 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanika Shete - Education</title>
-
+    
     <link rel="stylesheet" href="portfolio/myself/static/home.css">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        html {
-            height: 100%;
-        }
-
-        /* ------------------ BACKGROUND FIXED ------------------ */
+        /* --- Page Specific Styles (Background and Animations) --- */
         body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-
             /* BACKGROUND IMAGE: PATH CHANGED FOR GITHUB PAGES */
             background-image: url("portfolio/myself/static/images/A.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center center;
-
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: white;
-        }
-        /* ------------------------------------------------------- */
-
-        /* Content Section */
-        .content-section {
-            flex-grow: 1;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            color: white; /* Text color for better contrast on background image */
         }
 
-        /* Card Animation and Styling */
-        .item-card {
-            background-color: rgba(255, 255, 255, 0.95);
-            max-width: 800px;
-            width: 100%;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            border-left: 5px solid #6a0dad;
-            color: black;
-            cursor: pointer; /* Added pointer for interaction */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation/Transition */
+        /* HEADER & ICON ANIMATION */
+        h1 {
+            color: white; /* Overwriting primary-color to white for visibility */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        .item-card:hover {
-            transform: translateY(-5px); /* Subtle lift effect */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
-        }
-
-        .item-card h3 {
-            color: #6a0dad;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-        .item-card h4 {
-            color: #555;
-            font-size: 1em;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-        .duration-tag {
-            display: inline-block;
-            background-color: #6a0dad;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-
-        /* Heading Animation */
-        h1 {
-            text-align: center;
-            color: white; 
-            padding-top: 50px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+        h1::after {
+            background-color: white; /* Underline color change */
         }
         
         h1 .fas {
             /* Animation added to the cap icon */
             animation: bounce 1.5s infinite;
+            color: #ffcc00; /* Bright color for icon contrast */
         }
 
         @keyframes bounce {
@@ -110,70 +48,40 @@
                 transform: translateY(-3px);
             }
         }
-
-
-        /* Footer */
-        .footer {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-        }
-
-        /* Navbar */
-        nav {
+        
+        /* CONTENT LAYOUT FIX */
+        .content-section {
+             /* home.css already defines this, just keeping the content alignment here */
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #6a0dad;
-        }
-        nav ul {
-            display: flex;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        nav li {
-            margin-left: 20px;
         }
 
-        /* --- RESPONSIVENESS: Mobile Devices --- */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 15px 10px;
-            }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-                margin-top: 10px;
-                width: 100%;
-            }
-            nav li {
-                margin-left: 0;
-            }
-            h1 {
-                padding-top: 30px;
-                font-size: 2em;
-            }
-            .item-card {
-                padding: 15px;
-            }
+        /* CARD OVERRIDES (using home.css item-card style) */
+        .item-card {
+            max-width: 800px;
+            width: 100%;
+            border-left-color: var(--secondary-color); /* Ensuring purple border */
+        }
+
+        /* FOOTER OVERRIDE */
+        .footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background for visibility */
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-top: 40px; /* Reduced margin */
+        }
+        
+        /* NAVBAR OVERRIDE (For better contrast on background image) */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9); /* Opaque white nav for visibility */
+        }
+        nav #one, nav .two a {
+            color: var(--primary-color); /* Dark text on white background */
+        }
+        nav .two a:hover {
+            background-color: rgba(106, 0, 141, 0.1); /* Subtle hover */
+            color: var(--primary-color);
         }
     </style>
 </head>
