@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,8 @@
     <title>Sanika Shete - Full-Stack Developer</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'myself/static/home.css' %}">
+
+    <link rel="stylesheet" href="portfolio/myself/static/home.css">
 
     <style>
         html, body {
@@ -19,7 +19,8 @@
             display: flex;
             flex-direction: column;
 
-            background-image: url("{% static 'images/L.jpg' %}");
+            /* 3. BACKGROUND IMAGE: PATH CHANGED FOR GITHUB PAGES */
+            background-image: url("portfolio/myself/static/images/L.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -59,7 +60,7 @@
         }
 
         h1 {
-             text-align: center;
+            text-align: center;
             color: white; /* Changed to white for visibility */
             padding-top: 50px;
             font-size: 2.5em;
@@ -100,23 +101,22 @@
 <body>
 
     <nav>
-        <a href="{% url 'home'%}">Sanika Shete</a>
+        <a href="index.html">Sanika Shete</a>
         <ul>
-            <li><a href="{% url 'home'%}">Home</a></li>
-            <li><a href="{% url 'education'%}">Education</a></li>
-            <li><a href="{% url 'skills'%}">Skills</a></li>
-            <li><a href="{% url 'projects'%}">Projects</a></li>
-            <li><a href="{% url 'contact'%}">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <h1>Profile Summary</h1>
 
-    <!-- ALL CONTENT INSIDE THIS → Footer stays at bottom -->
     <div class="content-section">
 
         <div class="three">
-            <img src="{% static 'images/pro.jpg' %}" alt="Sanika Shete Profile image">
+            <img src="portfolio/myself/static/images/pro.jpg" alt="Sanika Shete Profile image">
             <p>
                 An aspiring and highly motivated <b>Python Full-Stack Developer</b> (2025). Skilled in Django, HTML, CSS, JavaScript, and SQL. Passionate about building efficient and user-friendly applications, including the Flower Shop Management System. Seeking opportunities to apply strong technical and problem-solving skills in a professional environment.
             </p>
@@ -125,9 +125,8 @@
     </div>
 
     <div class="footer">
-        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with Django & CSS Animation.</h4>
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with HTML/CSS.</h4>
     </div>
 
 </body>
 </html>
-
