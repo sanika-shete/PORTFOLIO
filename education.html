@@ -10,31 +10,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* --- Page Specific Styles (Background and Animations) --- */
+        /* --- EDUCATION PAGE SPECIFIC STYLES --- */
         body {
-            /* BACKGROUND IMAGE: PATH CHANGED FOR GITHUB PAGES */
-            background-image: url("portfolio/myself/static/images/A.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center center;
-            color: white; /* Text color for better contrast on background image */
+            /* 1. BACKGROUND IMAGE REMOVED. Using solid color with abstract pattern */
+            background-image: none;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333; /* Default text color */
+        }
+        
+        /* 2. TEXT VISIBILITY FIX: Ensuring all text in cards is dark and readable */
+        .item-card h3, .item-card h4, .item-card p {
+             color: #333 !important;
         }
 
-        /* HEADER & ICON ANIMATION */
+        /* 3. NEW NAVBAR STYLE (Light Purple Theme) */
+        nav {
+            background-color: #ffffff; /* White navbar background */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        nav #one, nav .two a {
+            color: var(--primary-color); /* Dark Purple text */
+        }
+        nav .two a:hover {
+            background-color: #f0f0f0;
+            color: var(--secondary-color);
+        }
+
+        /* 4. HEADER & ICON ANIMATION */
         h1 {
-            color: white; /* Overwriting primary-color to white for visibility */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: var(--primary-color); /* Primary Purple for header */
+            text-shadow: none;
+            padding-top: 20px; /* Reduced padding */
         }
         
         h1::after {
-            background-color: white; /* Underline color change */
+            background-color: var(--secondary-color);
         }
         
         h1 .fas {
-            /* Animation added to the cap icon */
+            color: var(--secondary-color);
             animation: bounce 1.5s infinite;
-            color: #ffcc00; /* Bright color for icon contrast */
         }
 
         @keyframes bounce {
@@ -49,39 +64,44 @@
             }
         }
         
-        /* CONTENT LAYOUT FIX */
-        .content-section {
-             /* home.css already defines this, just keeping the content alignment here */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* CARD OVERRIDES (using home.css item-card style) */
-        .item-card {
-            max-width: 800px;
+        /* --- ANIMATED BACKGROUND (ABSTRACT GEOMETRIC) --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            border-left-color: var(--secondary-color); /* Ensuring purple border */
+            height: 100%;
+            z-index: -1;
+            /* Geometric background pattern */
+            background-image: radial-gradient(#d3c9e3 1px, transparent 1px),
+                              radial-gradient(#d3c9e3 1px, #f0f4f8 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.5;
         }
 
-        /* FOOTER OVERRIDE */
-        .footer {
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background for visibility */
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            margin-top: 40px; /* Reduced margin */
-        }
-        
-        /* NAVBAR OVERRIDE (For better contrast on background image) */
-        nav {
-            background-color: rgba(255, 255, 255, 0.9); /* Opaque white nav for visibility */
-        }
-        nav #one, nav .two a {
-            color: var(--primary-color); /* Dark text on white background */
-        }
-        nav .two a:hover {
-            background-color: rgba(106, 0, 141, 0.1); /* Subtle hover */
-            color: var(--primary-color);
+        /* --- RESPONSIVENESS FIX FOR NAV BAR --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 10px;
+            }
+            .two {
+                flex-direction: column;
+                margin-top: 10px;
+                width: 100%;
+            }
+            .two li {
+                margin: 5px 0;
+                text-align: center;
+            }
+            .two a {
+                padding: 10px;
+                width: 100%;
+                display: block;
+            }
         }
     </style>
 </head>
@@ -97,7 +117,7 @@
         </ul> 
     </nav>
     
-    <h1><i class="fas fa-graduation-cap"></i> My Education</h1>
+    <h1><i class="fas fa-user-graduate"></i> My Education</h1>
 
     <div class="content-section">
         
