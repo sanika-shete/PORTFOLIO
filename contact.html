@@ -3,196 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanika Shete - Contact</title>
-
+    <title>Sanika Shete - Contact Me</title>
+    
+    <link rel="stylesheet" href="portfolio/myself/static/home.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <link rel="stylesheet" href="portfolio/myself/static/home.css">
-
     <style>
-        /* --- STICKY FOOTER & BACKGROUND FIXES --- */
-        html {
-            height: 100%;
-        }
+        /* --- CONTACT PAGE SPECIFIC STYLES --- */
         body {
-            /* STICKY FOOTER PROPERTIES */
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column; 
-            
-            /* GENERAL STYLES */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            
-            /* BACKGROUND IMAGE PROPERTIES: PATH CHANGED FOR GITHUB PAGES */
-            background-image: url("portfolio/myself/static/images/1.webp"); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center center;
+            /* 1. BACKGROUND IMAGE REMOVED: Clean white background */
+            background-image: none;
+            background-color: #ffffff; 
+            color: #333; 
         }
 
-        /* --- CONTENT PUSHER --- */
-        .form-section {
-            flex-grow: 1; 
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        /* --- FORM & HEADER STYLES (Preserved) --- */
-        h1 {
-            text-align: center;
-            color: white; /* Changed color for better visibility on background image */
-            padding-top: 50px;
-            font-size: 2.5em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Added shadow for header */
-        }
-        h1 .fas {
-            margin-right: 10px;
-            /* Animation added to the handshake icon */
-            animation: pulse 2s infinite; 
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .form-container {
-            width: 100%;
-            max-width: 650px;
-            background-color: rgba(255, 255, 255, 0.95); /* Increased opacity slightly */
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            /* Transition for smooth shadow change */
-            transition: box-shadow 0.3s ease-in-out; 
-        }
-        
-        .form-container:hover {
-            /* Subtle hover animation on the form box */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #333;
-            font-size: 16px;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box; 
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #6a0dad; 
-            outline: none;
-        }
-        .form-group textarea {
-            resize: vertical; 
-            min-height: 150px;
-        }
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: #6a0dad; 
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease; /* Added transform transition */
-        }
-        .submit-btn:hover {
-            background-color: #580a8b; 
-            transform: translateY(-2px); /* Subtle lift animation */
-        }
-        .submit-btn:active {
-            transform: translateY(0); /* Press effect */
-        }
-
-        /* --- FOOTER STYLES --- */
-        .footer {
-            background-color: rgba(0, 0, 0, 0.4); /* Added slight background to footer */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-        }
-        .footer h4 {
-            margin: 0;
-            font-size: 14px;
-        }
-        
-        /* Navbar styles (made responsive) */
+        /* 2. NEW NAVBAR STYLE (Clean White) */
         nav {
-            background-color: rgba(255, 255, 255, 0.9); /* Changed to white/transparent for better look */
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin: 10px;
-            color: rgb(14, 8, 8);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f8f8f8; /* Off-white navbar background */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        nav a { 
-            color: rgb(14, 8, 8); 
-            text-decoration: none; 
-            font-weight: 700;
-            transition: color 0.3s;
+        nav #one, nav .two a {
+            color: var(--primary-color); /* Dark Purple text */
         }
-        nav a:hover {
-            color: #6a0dad;
+        nav .two a:hover {
+            background-color: #eee;
+            color: var(--secondary-color);
         }
-        nav ul { 
-            display: flex; 
-            padding: 0; 
-            margin: 0; 
-            list-style: none; /* Removed type="none" from ul, using list-style: none instead */
-        }
-        nav li { margin-left: 20px; }
 
-        /* --- RESPONSIVENESS: Mobile Devices --- */
+        /* 3. HEADER STYLE */
+        h1 {
+            color: var(--primary-color);
+            text-shadow: none;
+            padding-top: 20px;
+        }
+        
+        h1::after {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Icon Animation */
+        h1 .fas {
+            animation: shake 0.8s infinite;
+        }
+        
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* 4. CONTACT FORM & INFO CARD OVERRIDES */
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .contact-info-card {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+        
+        .contact-info-card i {
+            color: var(--primary-color);
+        }
+        
+        /* Footer Style */
+        .footer {
+            background-color: #f8f8f8; 
+            color: #333;
+            text-shadow: none;
+        }
+
+        /* --- RESPONSIVENESS FIX FOR NAV BAR --- */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
+                align-items: center;
                 padding: 15px 10px;
             }
-            nav ul {
+            .two {
                 flex-direction: column;
-                text-align: center;
-                gap: 10px;
                 margin-top: 10px;
                 width: 100%;
             }
-            nav li {
-                margin-left: 0;
+            .two li {
+                margin: 5px 0;
+                text-align: center;
             }
-            .form-container {
-                padding: 20px;
-            }
-            h1 {
-                padding-top: 30px;
-                font-size: 2em;
+            .two a {
+                padding: 10px;
+                width: 100%;
+                display: block;
             }
         }
     </style>
@@ -209,37 +118,50 @@
         </ul> 
     </nav>
     
-    <h1><i class="fas fa-handshake"></i> Get in Touch</h1>
+    <h1><i class="fas fa-envelope-open-text"></i> Contact Me</h1>
 
-    <section class="form-section">
-        <div class="form-container">
-            <form action="" method="GET" id="contactForm">
+    <div class="content-section">
+
+        <div class="contact-form">
+            <form action="#" method="POST">
                 
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
 
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required placeholder="name@example.com">
-                </div>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g., Job Opportunity or Collaboration" required>
 
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required placeholder="e.g., Job Opportunity or Collaboration">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Tell me about yourself or your proposal..."></textarea>
-                </div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about yourself or your proposal..." required></textarea>
 
                 <button type="submit" class="submit-btn">Send Message</button>
-                <p style="text-align: center; color: red; margin-top: 15px;">*Note: This contact form is non-functional on GitHub Pages (static hosting). Please contact Sanika directly via LinkedIn or Email instead.</p>
             </form>
+            
+            <p class="form-note">
+                <i class="fas fa-info-circle"></i> **Note:** This contact form is non-functional on GitHub Pages (static hosting).
+                Please contact Sanika directly via **LinkedIn** or **Email** instead.
+            </p>
         </div>
-    </section>
+
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <i class="fas fa-paper-plane"></i>
+                <h3>Email</h3>
+                <p>sanika.shete@email.com</p>
+            </div>
+            <div class="contact-info-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/sanikashete" target="_blank">linkedin.com/in/sanikashete</a></p>
+            </div>
+            <div class="contact-info-card">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/sanika-shete" target="_blank">github.com/sanika-shete</a></p>
+            </div>
+        </div>
+        
+    </div>
 
     <div class="footer">
         <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Hosted with HTML/CSS.</h4>
