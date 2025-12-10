@@ -1,0 +1,154 @@
+{% extends 'myself/base.html' %}
+{% load static %}
+
+{% block title %}Sanika Shete - Projects{% endblock %}
+
+{% block content %}
+<h1><i class="fas fa-laptop-code"></i> My Projects</h1>
+
+<div class="content-section">
+    <!-- Compact Projects Grid - 4 per row -->
+    <div class="projects-compact-grid">
+
+        <!-- Project 1 - Flower Shop -->
+        <div class="project-compact-card featured">
+            <div class="project-badge">Featured</div>
+            <div class="project-image">
+                <img src="{% static 'images/3.png' %}" alt="Flower Shop Project">
+                <div class="project-overlay">
+                    <a href="#" class="project-link-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="project-link-icon"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-compact-content">
+                <h3>Flower Shop System</h3>
+                <p>Full-stack management system</p>
+                <div class="project-tech-stack">
+                    <span><i class="fab fa-python"></i></span>
+                    <span><i class="fas fa-server"></i></span>
+                    <span><i class="fas fa-database"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 - Portfolio -->
+        <div class="project-compact-card">
+            <div class="project-image">
+                <img src="{% static 'images/A.jpg' %}" alt="Portfolio Project">
+                <div class="project-overlay">
+                    <a href="#" class="project-link-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="project-link-icon"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-compact-content">
+                <h3>Animated Portfolio</h3>
+                <p>Interactive portfolio site</p>
+                <div class="project-tech-stack">
+                    <span><i class="fab fa-html5"></i></span>
+                    <span><i class="fab fa-css3-alt"></i></span>
+                    <span><i class="fab fa-js"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 - Currency Converter -->
+        <div class="project-compact-card">
+            <div class="project-image">
+                <img src="{% static 'images/L.jpg' %}" alt="Currency Converter">
+                <div class="project-overlay">
+                    <a href="#" class="project-link-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="project-link-icon"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-compact-content">
+                <h3>Currency Converter</h3>
+                <p>Real-time API integration</p>
+                <div class="project-tech-stack">
+                    <span><i class="fab fa-js"></i></span>
+                    <span><i class="fas fa-code"></i></span>
+                    <span><i class="fas fa-exchange-alt"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 - Coming Soon -->
+        <div class="project-compact-card coming-soon">
+            <div class="project-image coming-soon-bg">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="project-compact-content">
+                <h3>More Projects</h3>
+                <p>Exciting projects in development</p>
+                <div class="project-tech-stack">
+                    <span><i class="fas fa-code"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-magic"></i></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Project Highlights Section -->
+    <h2 class="section-title">
+        <i class="fas fa-star"></i> Project Highlights
+    </h2>
+    <div class="project-highlights-grid">
+        <div class="highlight-card">
+            <div class="highlight-icon">
+                <i class="fas fa-code-branch"></i>
+            </div>
+            <h4>Clean Code</h4>
+            <p>Well-structured and maintainable codebase following best practices</p>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon">
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h4>Performance</h4>
+            <p>Optimized for fast loading and smooth user experience</p>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Security</h4>
+            <p>Implemented secure authentication and data protection</p>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h4>Responsive</h4>
+            <p>Mobile-first design that works on all devices</p>
+        </div>
+    </div>
+
+    <!-- Development Process -->
+    <h2 class="section-title">
+        <i class="fas fa-tasks"></i> My Development Process
+    </h2>
+    <div class="process-timeline">
+        <div class="process-step">
+            <div class="process-number">1</div>
+            <h4>Planning & Research</h4>
+            <p>Understanding requirements and creating project roadmap</p>
+        </div>
+        <div class="process-step">
+            <div class="process-number">2</div>
+            <h4>Design & Prototype</h4>
+            <p>Creating wireframes and visual mockups</p>
+        </div>
+        <div class="process-step">
+            <div class="process-number">3</div>
+            <h4>Development</h4>
+            <p>Writing clean, efficient code with best practices</p>
+        </div>
+        <div class="process-step">
+            <div class="process-number">4</div>
+            <h4>Testing & Deploy</h4>
+            <p>Quality assurance and production deployment</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

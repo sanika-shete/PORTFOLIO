@@ -1,0 +1,233 @@
+{% extends 'myself/base.html' %}
+{% load static %}
+
+{% block title %}Sanika Shete - Full-Stack Developer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hi, I am</span>
+                <span class="hero-name">Sanika</span>
+            </h1>
+            <h2 class="hero-subtitle">
+                <span id="typewriter"></span><span class="cursor">|</span>
+            </h2>
+            <p class="hero-description">
+                Crafting elegant solutions with <strong>Django</strong>, <strong>React</strong>, and modern web
+                technologies.
+                Passionate about building scalable applications that make a difference.
+            </p>
+            <div class="hero-buttons">
+                <a href="{% url 'projects' %}" class="hero-btn primary">
+                    <i class="fas fa-rocket"></i> View My Work
+                </a>
+                <a href="{% url 'contact' %}" class="hero-btn secondary">
+                    <i class="fas fa-envelope"></i> Let's Talk
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">2025</span>
+                    <span class="stat-label">Graduate</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <img src="{% static 'images/pro.jpg' %}" alt="Sanika Shete">
+                <div class="image-glow"></div>
+            </div>
+            <div class="floating-icons">
+                <i class="fab fa-python floating-icon" style="--delay: 0s"></i>
+                <i class="fab fa-react floating-icon" style="--delay: 0.5s"></i>
+                <i class="fab fa-js floating-icon" style="--delay: 1s"></i>
+                <i class="fas fa-database floating-icon" style="--delay: 1.5s"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <!-- What I Do Section - 5 cards -->
+    <h2 class="section-title">
+        <i class="fas fa-magic"></i> What I Do
+    </h2>
+    <div class="services-modern-grid">
+        <div class="service-modern-card">
+            <div class="service-modern-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h3>Web Development</h3>
+            <p>Building responsive websites</p>
+            <div class="service-tech-tags">
+                <span>Django</span>
+                <span>React</span>
+            </div>
+        </div>
+
+        <div class="service-modern-card">
+            <div class="service-modern-icon">
+                <i class="fas fa-server"></i>
+            </div>
+            <h3>Backend Development</h3>
+            <p>Server-side applications</p>
+            <div class="service-tech-tags">
+                <span>Python</span>
+                <span>SQL</span>
+            </div>
+        </div>
+
+        <div class="service-modern-card">
+            <div class="service-modern-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Intuitive user interfaces</p>
+            <div class="service-tech-tags">
+                <span>CSS3</span>
+                <span>Figma</span>
+            </div>
+        </div>
+
+        <div class="service-modern-card">
+            <div class="service-modern-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <h3>API Development</h3>
+            <p>RESTful API integration</p>
+            <div class="service-tech-tags">
+                <span>REST</span>
+                <span>JSON</span>
+            </div>
+        </div>
+
+        <div class="service-modern-card">
+            <div class="service-modern-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Responsive Design</h3>
+            <p>Mobile-first approach</p>
+            <div class="service-tech-tags">
+                <span>Bootstrap</span>
+                <span>Flexbox</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Journey Timeline - Horizontal -->
+    <h2 class="section-title">
+        <i class="fas fa-route"></i> My Journey
+    </h2>
+    <div class="journey-horizontal">
+        <div class="journey-step">
+            <div class="journey-year">2022</div>
+            <div class="journey-dot"></div>
+            <div class="journey-content">
+                <h4>Started Programming</h4>
+                <p>Began with C and C++</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="journey-year">2023</div>
+            <div class="journey-dot"></div>
+            <div class="journey-content">
+                <h4>Web Development</h4>
+                <p>Mastered HTML, CSS, JS</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="journey-year">2024</div>
+            <div class="journey-dot"></div>
+            <div class="journey-content">
+                <h4>Django Expert</h4>
+                <p>Full-stack applications</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="journey-year">2025</div>
+            <div class="journey-dot"></div>
+            <div class="journey-content">
+                <h4>Industry Ready</h4>
+                <p>Professional developer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-modern">
+        <div class="cta-content">
+            <h2>Let's Build Something Amazing Together</h2>
+            <p>Ready to bring your ideas to life with clean code and creative solutions</p>
+            <div class="cta-buttons-modern">
+                <a href="{% url 'projects' %}" class="cta-btn-modern primary">
+                    <i class="fas fa-laptop-code"></i> View Projects
+                </a>
+                <a href="{% url 'contact' %}" class="cta-btn-modern secondary">
+                    <i class="fas fa-paper-plane"></i> Contact Me
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Typewriter Effect
+    const typewriter = document.getElementById('typewriter');
+    const skills = [
+        'Python Full-Stack Developer',
+        'Django Developer',
+        'React Developer',
+        'Web Developer',
+        'UI/UX Designer',
+        'Backend Developer',
+        'Frontend Developer'
+    ];
+
+    let skillIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
+
+    function type() {
+        const currentSkill = skills[skillIndex];
+
+        if (isDeleting) {
+            typewriter.textContent = currentSkill.substring(0, charIndex - 1);
+            charIndex--;
+            typeSpeed = 50;
+        } else {
+            typewriter.textContent = currentSkill.substring(0, charIndex + 1);
+            charIndex++;
+            typeSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentSkill.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            skillIndex = (skillIndex + 1) % skills.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(type, 1000);
+    });
+</script>
+{% endblock %}

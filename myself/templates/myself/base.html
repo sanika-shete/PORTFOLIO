@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sanika Shete - Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/enhancements.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects-education.css' %}">
+    <link rel="stylesheet" href="{% static 'css/project-extras.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact-styles.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    <nav>
+        <a href="{% url 'home' %}" id="one">Sanika Shete</a>
+        <ul class="two">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'education' %}">Education</a></li>
+            <li><a href="{% url 'skills' %}">Skills</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="footer">
+        <h4>&copy; 2025 Sanika Shete. All Rights Reserved. | Crafted with Django & CSS Animation.</h4>
+    </div>
+
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

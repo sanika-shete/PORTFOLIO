@@ -1,0 +1,216 @@
+{% extends 'myself/base.html' %}
+{% load static %}
+
+{% block title %}Sanika Shete - Skills{% endblock %}
+
+{% block content %}
+<h1><i class="fas fa-code"></i> My Technical Skills</h1>
+
+<div class="content-section">
+    <!-- Skills Introduction -->
+    <div class="skills-intro">
+        <p class="skills-intro-text">
+            I specialize in full-stack development with expertise in modern web technologies.
+            My skill set spans from frontend design to backend architecture, enabling me to build complete, scalable
+            applications.
+        </p>
+    </div>
+
+    <!-- Logo Loop Section -->
+    <div class="logoloop logoloop--fade logoloop--scale-hover" data-speed="100" data-direction="left"
+        data-hover-speed="0">
+        <div class="logoloop__track">
+            <ul class="logoloop__list">
+                <li class="logoloop__item" title="Python">
+                    <span class="logoloop__node"><i class="fab fa-python" style="color: #3776AB;"></i> Python</span>
+                </li>
+                <li class="logoloop__item" title="Django">
+                    <span class="logoloop__node"><i class="fas fa-server" style="color: #092E20;"></i> Django</span>
+                </li>
+                <li class="logoloop__item" title="HTML5">
+                    <span class="logoloop__node"><i class="fab fa-html5" style="color: #E34F26;"></i> HTML5</span>
+                </li>
+                <li class="logoloop__item" title="CSS3">
+                    <span class="logoloop__node"><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS3</span>
+                </li>
+                <li class="logoloop__item" title="JavaScript">
+                    <span class="logoloop__node"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript</span>
+                </li>
+                <li class="logoloop__item" title="React">
+                    <span class="logoloop__node"><i class="fab fa-react" style="color: #61DAFB;"></i> React</span>
+                </li>
+                <li class="logoloop__item" title="SQL">
+                    <span class="logoloop__node"><i class="fas fa-database" style="color: #4479A1;"></i> SQL</span>
+                </li>
+                <li class="logoloop__item" title="Git">
+                    <span class="logoloop__node"><i class="fab fa-git-alt" style="color: #F05032;"></i> Git</span>
+                </li>
+                <li class="logoloop__item" title="Bootstrap">
+                    <span class="logoloop__node"><i class="fab fa-bootstrap" style="color: #7952B3;"></i>
+                        Bootstrap</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Core Skills Section -->
+    <h2 class="section-title">
+        <i class="fas fa-star"></i> Core Competencies
+    </h2>
+
+    <!-- Compact Skills Grid - 5 per row, 2 rows -->
+    <div class="skills-compact-grid">
+        <!-- Python -->
+        <div class="skill-compact-card" data-skill="python">
+            <div class="skill-compact-icon">
+                <i class="fab fa-python" style="color: #3776AB;"></i>
+            </div>
+            <h4>Python</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 90%"></div>
+            </div>
+            <span class="skill-percentage">90%</span>
+        </div>
+
+        <!-- Django -->
+        <div class="skill-compact-card" data-skill="django">
+            <div class="skill-compact-icon">
+                <i class="fas fa-server" style="color: #092E20;"></i>
+            </div>
+            <h4>Django</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 85%"></div>
+            </div>
+            <span class="skill-percentage">85%</span>
+        </div>
+
+        <!-- HTML5 -->
+        <div class="skill-compact-card" data-skill="html">
+            <div class="skill-compact-icon">
+                <i class="fab fa-html5" style="color: #E34F26;"></i>
+            </div>
+            <h4>HTML5</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 95%"></div>
+            </div>
+            <span class="skill-percentage">95%</span>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill-compact-card" data-skill="css">
+            <div class="skill-compact-icon">
+                <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+            </div>
+            <h4>CSS3</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 90%"></div>
+            </div>
+            <span class="skill-percentage">90%</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-compact-card" data-skill="javascript">
+            <div class="skill-compact-icon">
+                <i class="fab fa-js" style="color: #F7DF1E;"></i>
+            </div>
+            <h4>JavaScript</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 85%"></div>
+            </div>
+            <span class="skill-percentage">85%</span>
+        </div>
+
+        <!-- React -->
+        <div class="skill-compact-card" data-skill="react">
+            <div class="skill-compact-icon">
+                <i class="fab fa-react" style="color: #61DAFB;"></i>
+            </div>
+            <h4>React</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 80%"></div>
+            </div>
+            <span class="skill-percentage">80%</span>
+        </div>
+
+        <!-- SQL -->
+        <div class="skill-compact-card" data-skill="sql">
+            <div class="skill-compact-icon">
+                <i class="fas fa-database" style="color: #4479A1;"></i>
+            </div>
+            <h4>SQL</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 85%"></div>
+            </div>
+            <span class="skill-percentage">85%</span>
+        </div>
+
+        <!-- Git -->
+        <div class="skill-compact-card" data-skill="git">
+            <div class="skill-compact-icon">
+                <i class="fab fa-git-alt" style="color: #F05032;"></i>
+            </div>
+            <h4>Git</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 88%"></div>
+            </div>
+            <span class="skill-percentage">88%</span>
+        </div>
+
+        <!-- C/C++ -->
+        <div class="skill-compact-card" data-skill="cpp">
+            <div class="skill-compact-icon">
+                <i class="fas fa-code" style="color: #00599C;"></i>
+            </div>
+            <h4>C/C++</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 75%"></div>
+            </div>
+            <span class="skill-percentage">75%</span>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="skill-compact-card" data-skill="bootstrap">
+            <div class="skill-compact-icon">
+                <i class="fab fa-bootstrap" style="color: #7952B3;"></i>
+            </div>
+            <h4>Bootstrap</h4>
+            <div class="skill-progress">
+                <div class="skill-progress-bar" style="--progress: 82%"></div>
+            </div>
+            <span class="skill-percentage">82%</span>
+        </div>
+    </div>
+
+    <!-- Additional Skills Section -->
+    <h2 class="section-title">
+        <i class="fas fa-tools"></i> Additional Expertise
+    </h2>
+    <div class="additional-skills-grid">
+        <div class="additional-skill-card">
+            <i class="fas fa-database"></i>
+            <h4>Database Management</h4>
+            <p>MySQL, PostgreSQL, SQLite</p>
+        </div>
+        <div class="additional-skill-card">
+            <i class="fas fa-code-branch"></i>
+            <h4>Version Control</h4>
+            <p>Git, GitHub, GitLab</p>
+        </div>
+        <div class="additional-skill-card">
+            <i class="fas fa-paint-brush"></i>
+            <h4>UI/UX Design</h4>
+            <p>Figma, Responsive Design</p>
+        </div>
+        <div class="additional-skill-card">
+            <i class="fas fa-server"></i>
+            <h4>API Development</h4>
+            <p>REST APIs, JSON</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/logoloop.js' %}"></script>
+<script src="{% static 'js/chromagrid.js' %}"></script>
+{% endblock %}
